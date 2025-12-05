@@ -531,6 +531,14 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  MyDirectRules:
+    url: https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/MyDirectRules.list
+    path: ./ruleset/MyDirectRules.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
 
 rules:
   - "RULE-SET,LocalAreaNetwork,全球直连"
@@ -565,3 +573,4 @@ rules:
   - "RULE-SET,Download,全球直连"
   - "GEOIP,CN,全球直连"
   - "MATCH,漏网之鱼"
+  - "RULE-SET,MyDirectRules,全球直连"
