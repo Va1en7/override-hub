@@ -532,7 +532,7 @@ rule-providers:
     format: text
     type: http
   MyDirectRules:
-    url: https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/MyDirectRules.list
+    url: "https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/MyDirectRules.list"
     path: ./ruleset/MyDirectRules.list
     behavior: classical
     interval: 86400
