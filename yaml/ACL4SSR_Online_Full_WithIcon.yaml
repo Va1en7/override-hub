@@ -541,6 +541,7 @@ rule-providers:
 
 
 rules:
+  - "RULE-SET,MyDirectRules,全球直连"
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
@@ -573,4 +574,3 @@ rules:
   - "RULE-SET,Download,全球直连"
   - "GEOIP,CN,全球直连"
   - "MATCH,漏网之鱼"
-  - "RULE-SET,MyDirectRules,全球直连"
