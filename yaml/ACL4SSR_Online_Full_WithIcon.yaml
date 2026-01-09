@@ -4,6 +4,7 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
+      - 落地节点
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -28,6 +29,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 落地节点
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -42,6 +44,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 落地节点
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -56,6 +59,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 落地节点
       - 狮城节点
       - 香港节点
       - 台湾节点
@@ -70,6 +74,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 落地节点
       - 奈飞节点
       - 狮城节点
       - 香港节点
@@ -100,6 +105,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 落地节点
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -205,6 +211,7 @@ proxy-groups:
       - DIRECT
       - 节点选择
       - 自动选择
+      - 落地节点
   - name: 全球直连
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     type: select
@@ -212,6 +219,7 @@ proxy-groups:
       - DIRECT
       - 节点选择
       - 自动选择
+      - 落地节点
   - name: 广告拦截
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png
     type: select
@@ -230,6 +238,7 @@ proxy-groups:
     proxies:
       - 节点选择
       - 自动选择
+      - 落地节点
       - DIRECT
       - 香港节点
       - 台湾节点
@@ -299,6 +308,7 @@ proxy-groups:
       - 节点选择
       - 手动切换
       - 自动选择
+      - 落地节点
       - 电报消息
       - OpenAi
       - 油管视频
