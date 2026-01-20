@@ -27,7 +27,6 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
-      - 落地节点
       - 香港节点
       - 台湾节点
       - 狮城节点
@@ -41,7 +40,6 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
-      - 落地节点
       - 香港节点
       - 台湾节点
       - 狮城节点
