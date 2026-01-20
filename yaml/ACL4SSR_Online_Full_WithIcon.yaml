@@ -23,8 +23,7 @@ proxy-groups:
     include-all: true
     interval: 300
     tolerance: 50
-  - name: 链式1
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+  - name: 落地节点
     type: select
     proxies:
       - 自动选择
@@ -37,10 +36,9 @@ proxy-groups:
       - 韩国节点
       - 手动切换
       - DIRECT
-  - name: 链式2
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+    dialer-proxy: 中转节点
+  - name: 中转节点
     type: select
-    dialer-proxy: 链式1
     proxies:
       - 自动选择
       - 落地节点
@@ -315,12 +313,6 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
     include-all: true
     filter: (?i)KR|Korea|KOR|首尔|韩|韓
-    type: url-test
-    interval: 300
-    tolerance: 50
-  - name: 落地节点
-    include-all: true
-    filter: (?i)落地
     type: url-test
     interval: 300
     tolerance: 50
