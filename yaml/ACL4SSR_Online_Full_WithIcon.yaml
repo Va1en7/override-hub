@@ -23,7 +23,6 @@ proxy-groups:
     include-all: true
     interval: 300
     tolerance: 50
-  - name: 落地节点
   - name: 电报消息
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
@@ -287,6 +286,12 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
     include-all: true
     filter: (?i)KR|Korea|KOR|首尔|韩|韓
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 落地节点
+    include-all: true
+    filter: (?i)落地
     type: url-test
     interval: 300
     tolerance: 50
