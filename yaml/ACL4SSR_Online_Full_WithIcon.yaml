@@ -24,6 +24,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
   - name: 落地节点
+    dialer-proxy: 中转节点
     type: select
     proxies:
       - 自动选择
