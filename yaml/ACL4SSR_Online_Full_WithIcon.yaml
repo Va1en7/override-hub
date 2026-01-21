@@ -23,6 +23,28 @@ proxy-groups:
     include-all: true
     interval: 300
     tolerance: 50
+  - name: 落地节点
+    type: select
+    proxies:
+      - 自动选择
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 韩国节点
+      - 手动切换
+  - name: 中转节点
+    type: select
+    proxies:
+      - 自动选择
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 韩国节点
+      - 手动切换
   - name: 电报消息
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
@@ -289,12 +311,6 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
-  - name: 落地节点
-    include-all: true
-    filter: (?i)落地
-    type: url-test
-    interval: 300
-    tolerance: 50
   - name: 奈飞节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
     include-all: true
@@ -308,6 +324,7 @@ proxy-groups:
       - 节点选择
       - 手动切换
       - 自动选择
+      - 中转节点
       - 落地节点
       - 电报消息
       - OpenAi
