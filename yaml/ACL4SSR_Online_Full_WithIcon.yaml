@@ -24,17 +24,11 @@ proxy-groups:
     interval: 300
     tolerance: 50
   - name: 落地节点
-    dialer-proxy: 中转节点
-    type: select
-    proxies:
-      - 自动选择
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - 手动切换
+    include-all: true
+    filter: (?i)落地
+    type: url-test
+    interval: 300
+    tolerance: 50
   - name: 中转节点
     type: select
     proxies:
@@ -301,7 +295,7 @@ proxy-groups:
   - name: 狮城节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     include-all: true
-    filter: (?i)新加坡|坡|狮城|SG|Singapore
+    filter: (?i)^(?!.*落地)(?i)(.*(新加坡|坡|狮城|SG|Singapore))
     type: url-test
     interval: 300
     tolerance: 50
