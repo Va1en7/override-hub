@@ -582,7 +582,7 @@ rule-providers:
     type: http
 
 rules:
-  - "RULE-SET,MyProxyRules,手动选择"
+  - "RULE-SET,MyProxyRules,手动切换"
   - "RULE-SET,MyDirectRules,全球直连"
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
