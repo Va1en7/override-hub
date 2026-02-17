@@ -573,9 +573,16 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-
+  MyProxyRules:
+    url: https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/MyProxyRules.list
+    path: ./ruleset/MyProxyRules.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
 
 rules:
+  - "RULE-SET,MyProxyRules,手动选择"
   - "RULE-SET,MyDirectRules,全球直连"
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
