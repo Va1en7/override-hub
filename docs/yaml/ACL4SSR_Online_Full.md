@@ -51,7 +51,7 @@ rule-providers 多来自 `ACL4SSR/ACL4SSR` 仓库 list，经 jsDelivr 拉取，`
 
 > 本地追加：`- "RULE-SET,Antigravity,💬 AIGC"` 排在 `RULE-SET,OpenAi` 之前，域名清单在 [`Rules/antigravity.list`](../../Rules/antigravity.list)，由 `rule-providers.Antigravity`（`type: http` + `behavior: classical`）经 jsDelivr 拉取，list 内不写出站。同时把出站组 `💬 OpenAi` 改名为 `💬 AIGC`。
 >
-> 原因：ACL4SSR 的 `Google.list` 不含这些域名，不追加就会落到 `🌍 国外媒体` / 兜底组。清单为**宽口径**，来自 mihomo-party 日志对 `agy.exe` 的实测归因（2026-09-24 ~ 10-09，2137 条连接），维护说明见 [`docs/rules/自建规则.md`](../rules/自建规则.md)。
+> 原因：ACL4SSR 的 `Google.list` 不含这些域名，不追加就会落到 `🌍 国外媒体` / 兜底组。清单为**窄口径**（只收 Antigravity 专有域名），来自 mihomo-party 日志对 `agy.exe` 的实测归因（2026-09-24 ~ 10-09，2137 条连接），维护说明见 [`docs/rules/自建规则.md`](../rules/自建规则.md)。
 
 ## 与 WithIcon 版差异
 

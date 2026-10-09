@@ -5,31 +5,26 @@
 #
 # 数据来源：本机 mihomo-party core 日志实测
 #   日志区间 2026-09-24 ~ 2026-10-09，归因到 agy.exe 的连接 2137 条
-#   注意：本清单为「宽口径」——含 agy.exe 访问过的通用 Google 域名，
-#   因此 Chrome 等其它进程访问同一域名时也会走 AIGC 组。
+#   口径：**窄**——只收 Antigravity 专有域名，不收通用 Google 域名，
+#   避免把 Chrome 等其它进程的 Google 流量一起拉进 AIGC 组。
 
-# --- 核心后端（模型推理 / 账号 / 配置）---
+# --- 核心后端（模型推理）---
 DOMAIN-SUFFIX,daily-cloudcode-pa.googleapis.com
 DOMAIN-SUFFIX,aicode.googleapis.com
-DOMAIN-SUFFIX,oauth2.googleapis.com
 
 # --- Antigravity 自有域名 ---
 DOMAIN-SUFFIX,antigravity.google
 DOMAIN-SUFFIX,antigravity-unleash.goog
 DOMAIN-KEYWORD,antigravity-cli-auto-updater
 
-# --- agy.exe 实测访问的通用 Google 域名（宽口径）---
-DOMAIN-SUFFIX,play.googleapis.com
-DOMAIN-SUFFIX,www.googleapis.com
-DOMAIN-SUFFIX,lh3.googleusercontent.com
-DOMAIN-SUFFIX,www.gstatic.com
-
-# --- 故意排除的域名 ---
-# storage.googleapis.com：Antigravity 更新包的实际下载地址，不放进本规则集，
-#   让它继续按通用规则（ACL4SSR 的 Google / 兜底）处理，避免更新流量被拉进 AIGC 组。
-
-# --- 以下为 agy.exe 实测访问的 Playwright CDN，当前由 RULE-SET,Microsoft 先命中走 DIRECT（实测正常），
-#     且本 RULE-SET 位于 Microsoft 之后，启用也无效；如确需代理，需同时把 Antigravity 提到 Microsoft 之前。
+# --- 故意排除 ---
+# 通用 Google 域名（oauth2 / play / www / lh3.googleusercontent / www.gstatic /
+#   storage.googleapis）均为多进程共享，不收进本规则集，按通用规则
+#   （ACL4SSR 的 Google / 兜底）处理。
+#   storage.googleapis.com 另为 Antigravity 更新包的实际下载地址。
+# playwright*.azureedge.net：实测由 RULE-SET,Microsoft 先命中走 DIRECT 且正常，
+#   且本 RULE-SET 排在 Microsoft 之后，启用也无效；如确需代理，需同时把
+#   Antigravity 提到 Microsoft 之前。
 # DOMAIN,playwright.azureedge.net
 # DOMAIN,playwright-akamai.azureedge.net
 # DOMAIN,playwright-verizon.azureedge.net
