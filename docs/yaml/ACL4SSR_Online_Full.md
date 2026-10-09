@@ -16,7 +16,7 @@
 | ♻️ 自动选择 | url-test，interval 300，tolerance 50 |
 | 🇭🇰🇯🇵🇺🇲🇨🇳🇸🇬🇰🇷 地区节点 | 地区 url-test/select |
 | 📲 电报消息 | Telegram |
-| 💬 OpenAi | OpenAI |
+| 💬 AIGC | OpenAI + Google Antigravity（Antigravity 为本地追加规则） |
 | 📹 油管视频 | YouTube |
 | 🎥 奈飞视频 / 🎥 奈飞节点 | Netflix |
 | 📺 巴哈姆特 / 📺 哔哩哔哩 | 动漫/国内视频相关 |
@@ -39,7 +39,7 @@
 2. 广告 / 应用净化 → 拦截组  
 3. FCM、GoogleCN、SteamCN  
 4. Bing / OneDrive / Microsoft / Apple  
-5. Telegram / OpenAI / 网易云 / 游戏平台  
+5. Telegram / AIGC（OpenAI + Antigravity）/ 网易云 / 游戏平台  
 6. YouTube / Netflix / 巴哈 / B 站  
 7. 国内媒体 / 国外媒体  
 8. ProxyGFWlist → 节点选择  
@@ -48,6 +48,8 @@
 11. `MATCH` → 漏网之鱼  
 
 rule-providers 多来自 `ACL4SSR/ACL4SSR` 仓库 list，经 jsDelivr 拉取，`interval: 86400`。
+
+> 本地追加：在 `RULE-SET,OpenAi` 之前插入了 Antigravity 的 `DOMAIN-SUFFIX` 规则（`antigravity.google`、`antigravity-unleash.goog`、`antigravity.googleapis.com`、`antigravity-pa.googleapis.com`、`cloudcode-pa.googleapis.com`、`daily-cloudcode-pa.googleapis.com`、`daily-cloudcode-pa.sandbox.googleapis.com`、`cloudaicompanion.googleapis.com`、`generativelanguage.googleapis.com`），并把出站组 `💬 OpenAi` 改名为 `💬 AIGC`。原因：ACL4SSR 的 `Google.list` 不含这些域名，不追加就会落到 `🌍 国外媒体` / 兜底组。
 
 ## 与 WithIcon 版差异
 

@@ -138,7 +138,7 @@ proxy-groups:
       - 韩国节点
       - 手动切换
       - DIRECT
-  - name: OpenAi
+  - name: 💬 AIGC
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
@@ -363,7 +363,7 @@ proxy-groups:
       - 中转节点
       - 落地节点
       - 电报消息
-      - OpenAi
+      - 💬 AIGC
       - 油管视频
       - 奈飞视频
       - 巴哈姆特
@@ -637,7 +637,16 @@ rules:
   - "RULE-SET,Microsoft,微软服务"
   - "RULE-SET,Apple,苹果服务"
   - "RULE-SET,Telegram,电报消息"
-  - "RULE-SET,OpenAi,OpenAi"
+  - "DOMAIN-SUFFIX,antigravity.google,💬 AIGC"
+  - "DOMAIN-SUFFIX,antigravity-unleash.goog,💬 AIGC"
+  - "DOMAIN-SUFFIX,antigravity.googleapis.com,💬 AIGC"
+  - "DOMAIN-SUFFIX,antigravity-pa.googleapis.com,💬 AIGC"
+  - "DOMAIN-SUFFIX,cloudcode-pa.googleapis.com,💬 AIGC"
+  - "DOMAIN-SUFFIX,daily-cloudcode-pa.googleapis.com,💬 AIGC"
+  - "DOMAIN-SUFFIX,daily-cloudcode-pa.sandbox.googleapis.com,💬 AIGC"
+  - "DOMAIN-SUFFIX,cloudaicompanion.googleapis.com,💬 AIGC"
+  - "DOMAIN-SUFFIX,generativelanguage.googleapis.com,💬 AIGC"
+  - "RULE-SET,OpenAi,💬 AIGC"
   - "RULE-SET,NetEaseMusic,网易音乐"
   - "RULE-SET,Epic,游戏平台"
   - "RULE-SET,Origin,游戏平台"
