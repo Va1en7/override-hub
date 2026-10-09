@@ -349,6 +349,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  Antigravity:
+    url: https://testingcf.jsdelivr.net/gh/Va1en7/override-hub@main/Rules/antigravity.list
+    path: ./ruleset/antigravity.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   NetEaseMusic:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/NetEaseMusic.list
     path: ./ruleset/NetEaseMusic.list
@@ -482,15 +489,7 @@ rules:
   - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
   - "RULE-SET,Apple,🍎 苹果服务"
   - "RULE-SET,Telegram,📲 电报消息"
-  - "DOMAIN-SUFFIX,antigravity.google,💬 AIGC"
-  - "DOMAIN-SUFFIX,antigravity-unleash.goog,💬 AIGC"
-  - "DOMAIN-SUFFIX,antigravity.googleapis.com,💬 AIGC"
-  - "DOMAIN-SUFFIX,antigravity-pa.googleapis.com,💬 AIGC"
-  - "DOMAIN-SUFFIX,cloudcode-pa.googleapis.com,💬 AIGC"
-  - "DOMAIN-SUFFIX,daily-cloudcode-pa.googleapis.com,💬 AIGC"
-  - "DOMAIN-SUFFIX,daily-cloudcode-pa.sandbox.googleapis.com,💬 AIGC"
-  - "DOMAIN-SUFFIX,cloudaicompanion.googleapis.com,💬 AIGC"
-  - "DOMAIN-SUFFIX,generativelanguage.googleapis.com,💬 AIGC"
+  - "RULE-SET,Antigravity,💬 AIGC"
   - "RULE-SET,OpenAi,💬 AIGC"
   - "RULE-SET,NetEaseMusic,🎶 网易音乐"
   - "RULE-SET,Epic,🎮 游戏平台"

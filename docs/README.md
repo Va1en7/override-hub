@@ -27,6 +27,7 @@ override-hub/
 | Rules | [`Rules/MyDirectRules.list`](../Rules/MyDirectRules.list) | 自用直连域名/进程 | [详情](./rules/自建规则.md) |
 | Rules | [`Rules/MyProxyRules.list`](../Rules/MyProxyRules.list) | 自用代理域名 | [详情](./rules/自建规则.md) |
 | Rules | [`Rules/reject_rule.list`](../Rules/reject_rule.list) | 自用拒绝列表（空壳待填） | [详情](./rules/自建规则.md) |
+| Rules | [`Rules/antigravity.list`](../Rules/antigravity.list) | Antigravity（agy.exe）域名清单 | [详情](./rules/自建规则.md) |
 
 ## 使用方式（Mihomo / Clash Verge / Party 等）
 

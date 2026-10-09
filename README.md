@@ -35,6 +35,7 @@
 | [Rules/reject_rule.list](./Rules/reject_rule.list) | 自用拒绝（空壳待填） |
 | [Rules/MyDirectRules.list](./Rules/MyDirectRules.list) | 自用直连 |
 | [Rules/MyProxyRules.list](./Rules/MyProxyRules.list) | 自用代理 |
+| [Rules/antigravity.list](./Rules/antigravity.list) | Antigravity（agy.exe）域名清单 |
 
 ## 远程 raw（GitHub）
 
@@ -51,3 +52,10 @@
 
 - [布丁狗的订阅转换.js](https://raw.githubusercontent.com/mihomo-party-org/override-hub/main/javascript/%E5%B8%83%E4%B8%81%E7%8B%97%E7%9A%84%E8%AE%A2%E9%98%85%E8%BD%AC%E6%8D%A2.js)
 - [防止dns泄露(雾).js](https://raw.githubusercontent.com/mihomo-party-org/override-hub/main/javascript/%E9%98%B2%E6%AD%A2dns%E6%B3%84%E9%9C%B2(%E9%9B%BE).js)
+
+### Rules
+
+本仓库实际 owner 为 `Va1en7`，`Rules/antigravity.list` 被 ACL4SSR 覆写通过 jsDelivr 引用：
+
+- jsDelivr：[Rules/antigravity.list](https://testingcf.jsdelivr.net/gh/Va1en7/override-hub@main/Rules/antigravity.list)
+- GitHub raw：[Rules/antigravity.list](https://raw.githubusercontent.com/Va1en7/override-hub/main/Rules/antigravity.list)
