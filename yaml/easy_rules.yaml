@@ -1,6 +1,6 @@
 +rules:
   - RULE-SET,reject_rules,REJECT-DROP
-  - RULE-SET,proxy_rules,GLOBAL
+  - RULE-SET,proxy_rules,PROXY
   - RULE-SET,direct_rules,DIRECT
 
 rule-providers:
@@ -8,14 +8,14 @@ rule-providers:
     type: file
     behavior: classical
     format: text
-    path: rules/reject_rule.list
+    path: Rules/reject_rule.list
   proxy_rules:
     type: file
     behavior: classical
     format: text
-    path: rules/proxy_rule.list
+    path: Rules/MyProxyRules.list
   direct_rules:
     type: file
     behavior: classical
     format: text
-    path: rules/direct_rule.list
+    path: Rules/MyDirectRules.list

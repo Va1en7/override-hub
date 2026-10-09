@@ -26,6 +26,7 @@ override-hub/
 | JS | [`javascript/正则匹配设置代理组图标.js`](../javascript/正则匹配设置代理组图标.js) | 按组名正则补图标 | [详情](./javascript/正则匹配设置代理组图标.md) |
 | Rules | [`Rules/MyDirectRules.list`](../Rules/MyDirectRules.list) | 自用直连域名/进程 | [详情](./rules/自建规则.md) |
 | Rules | [`Rules/MyProxyRules.list`](../Rules/MyProxyRules.list) | 自用代理域名 | [详情](./rules/自建规则.md) |
+| Rules | [`Rules/reject_rule.list`](../Rules/reject_rule.list) | 自用拒绝列表（空壳待填） | [详情](./rules/自建规则.md) |
 
 ## 使用方式（Mihomo / Clash Verge / Party 等）
 
@@ -33,7 +34,7 @@ override-hub/
 2. 在客户端「覆写 / Override / 脚本」里挂对应 YAML 或 JS。
 3. YAML 若使用 `+rules`，一般是**前置追加**规则，不整表替换。
 4. JS 必须导出 `function main(config) { ...; return config }`。
-5. 本地 `Rules/*.list` 需与 `easy_rules.yaml` 里的 `path` 对齐，或改成你机器上的实际路径。
+5. 本地 `Rules/*.list` 已与 `easy_rules.yaml` 的 `path` 对齐；若客户端工作目录不同，改成你机器上的实际路径。
 
 ## 选型建议
 

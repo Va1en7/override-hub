@@ -107,10 +107,10 @@ override-hub/
 
 ## 已知技术债（改前先看）
 
-1. **`easy_rules.yaml` path 与仓库文件名不一致**
-   - yaml 默认：`rules/reject_rule.list`、`proxy_rule.list`、`direct_rule.list`
-   - 仓库实际：`Rules/MyDirectRules.list`、`Rules/MyProxyRules.list`（无 reject 列表）
-   - 修改任一侧时要么对齐 path/命名，要么在文档与回复中写清仍不兼容。
+1. **`easy_rules.yaml` path 已对齐仓库文件名（已修复）**
+   - 现为：`Rules/reject_rule.list`、`Rules/MyProxyRules.list`、`Rules/MyDirectRules.list`。
+   - `Rules/reject_rule.list` 是空壳（只有注释头），待填内容。
+   - `path` 相对**客户端工作目录**而非仓库根目录；改文件名时必须同步改 yaml。
 2. **防 DNS 泄露脚本依赖配置中存在 `MATCH` 规则**；无 MATCH 时不会插入 RULE-SET。
 3. **图标 / 规则集依赖外网 CDN 或 GitHub raw**；用户环境不稳时应允许改 mirror 或 `type: file`。
 

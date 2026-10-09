@@ -32,6 +32,7 @@
 
 | 文件 | 说明 |
 |------|------|
+| [Rules/reject_rule.list](./Rules/reject_rule.list) | 自用拒绝（空壳待填） |
 | [Rules/MyDirectRules.list](./Rules/MyDirectRules.list) | 自用直连 |
 | [Rules/MyProxyRules.list](./Rules/MyProxyRules.list) | 自用代理 |
 

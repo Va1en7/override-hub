@@ -1,0 +1,6 @@
+# 个人拒绝规则（classical list）
+# 一行一条，例如：
+#   DOMAIN-SUFFIX,ads.example.com
+#   DOMAIN-KEYWORD,tracker
+#   IP-CIDR,203.0.113.0/24
+# 出口由 easy_rules.yaml 中的 RULE-SET,reject_rules,REJECT-DROP 指定，list 内不写出站。
