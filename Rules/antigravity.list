@@ -22,8 +22,11 @@ DOMAIN-KEYWORD,antigravity-cli-auto-updater
 DOMAIN-SUFFIX,play.googleapis.com
 DOMAIN-SUFFIX,www.googleapis.com
 DOMAIN-SUFFIX,lh3.googleusercontent.com
-DOMAIN-SUFFIX,storage.googleapis.com
 DOMAIN-SUFFIX,www.gstatic.com
+
+# --- 故意排除的域名 ---
+# storage.googleapis.com：Antigravity 更新包的实际下载地址，不放进本规则集，
+#   让它继续按通用规则（ACL4SSR 的 Google / 兜底）处理，避免更新流量被拉进 AIGC 组。
 
 # --- 以下为 agy.exe 实测访问的 Playwright CDN，当前由 RULE-SET,Microsoft 先命中走 DIRECT（实测正常），
 #     且本 RULE-SET 位于 Microsoft 之后，启用也无效；如确需代理，需同时把 Antigravity 提到 Microsoft 之前。
