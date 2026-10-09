@@ -55,7 +55,7 @@
 
 ### Rules
 
-本仓库实际 owner 为 `Va1en7`，`Rules/antigravity.list` 被 ACL4SSR 覆写通过 jsDelivr 引用：
+本仓库实际 owner 为 `Va1en7`。约定：**自建 list 一律走 GitHub raw，第三方 list 才走 CDN（testingcf jsDelivr）**；`Rules/antigravity.list` 即走 raw：
 
-- jsDelivr：[Rules/antigravity.list](https://testingcf.jsdelivr.net/gh/Va1en7/override-hub@main/Rules/antigravity.list)
-- GitHub raw：[Rules/antigravity.list](https://raw.githubusercontent.com/Va1en7/override-hub/main/Rules/antigravity.list)
+- GitHub raw（provider 实际使用）：[Rules/antigravity.list](https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/antigravity.list)
+- jsDelivr 镜像（仅供浏览器/手动下载，**勿用于 provider**，分支引用有 12 小时缓存）：[Rules/antigravity.list](https://testingcf.jsdelivr.net/gh/Va1en7/override-hub@main/Rules/antigravity.list)

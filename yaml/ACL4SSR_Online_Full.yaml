@@ -350,7 +350,7 @@ rule-providers:
     format: text
     type: http
   Antigravity:
-    url: https://testingcf.jsdelivr.net/gh/Va1en7/override-hub@main/Rules/antigravity.list
+    url: https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/antigravity.list
     path: ./ruleset/antigravity.list
     behavior: classical
     interval: 86400

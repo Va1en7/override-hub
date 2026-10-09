@@ -63,6 +63,7 @@ override-hub/
 - 规则书写优先与仓库现有风格一致（部分文件对 RULE-SET 使用带引号字符串）。
 - 出站名必须是最终配置里存在的组（`DIRECT` / `REJECT` / `PROXY` / 自定义中文组名等）。
 - CDN 现多用 `testingcf.jsdelivr.net`；替换镜像时同一文件内保持一致。
+- **自建 list 走 GitHub raw，第三方 list 才走 CDN**：`Rules/*.list` 在 `rule-providers` 中一律写 `url: https://raw.githubusercontent.com/Va1en7/override-hub/refs/heads/main/Rules/<name>.list` + `path: ./ruleset/<name>.list`（与 `MyDirectRules` / `MyProxyRules` 一致）。**不要把自己的 list 放到 jsDelivr 上**——分支引用（`@main`）有 12 小时缓存且 `purge.jsdelivr.net` 对它不生效，改了规则会长时间返回旧版。
 
 ### JavaScript
 
@@ -111,6 +112,7 @@ override-hub/
    - 现为：`Rules/reject_rule.list`、`Rules/MyProxyRules.list`、`Rules/MyDirectRules.list`。
    - `Rules/reject_rule.list` 是空壳（只有注释头），待填内容。
    - `path` 相对**客户端工作目录**而非仓库根目录；改文件名时必须同步改 yaml。
+   - 实测 mihomo-party 的客户端工作目录是 `%APPDATA%\mihomo-party\work\`，且自建 list 实际都放在其下的 `ruleset/`；该目录下**没有** `Rules/`，所以 `easy_rules.yaml` 里的 `path: Rules/*.list` 在 mihomo-party 下取不到文件（待确认 easy_rules.yaml 的实际使用场景，再决定是否改为 `./ruleset/*.list`）。
 2. **防 DNS 泄露脚本依赖配置中存在 `MATCH` 规则**；无 MATCH 时不会插入 RULE-SET。
 3. **图标 / 规则集依赖外网 CDN 或 GitHub raw**；用户环境不稳时应允许改 mirror 或 `type: file`。
 
