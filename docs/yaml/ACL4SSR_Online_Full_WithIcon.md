@@ -26,13 +26,13 @@ ACL4SSR 全量分流 + 策略组图标 + 内置 DNS（fake-ip）。适合 Mihomo
 
 ## 策略组与规则
 
-整体与 `ACL4SSR_Online_Full.yaml` 同系：节点选择、电报、AIGC（OpenAI + Antigravity）、流媒体、微软、苹果、游戏、广告、漏网之鱼等。  
+整体与 `ACL4SSR_Online_Full.yaml` 同系：节点选择、电报、AIGC（OpenAI + Antigravity + Gemini）、流媒体、微软、苹果、游戏、广告、漏网之鱼等。  
 区别主要是：
 
 - 组名更偏简洁（部分无 emoji 前缀，以源文件为准）
 - 每组带 `icon`（Qure / 同类图标集）
 - 文件头部多了完整 `dns:`
-- 本地改动：组名 `OpenAi` → `💬 AIGC`；在 `RULE-SET,OpenAi` 前加 `- "RULE-SET,Antigravity,💬 AIGC"`，清单为 [`Rules/antigravity.list`](../../Rules/antigravity.list)，由 `rule-providers.Antigravity` 经 **GitHub raw** 拉取（同 Full 版）。不追加会被后面的 `RULE-SET,Google,国外媒体` 或兜底先命中。
+- 本地改动：组名 `OpenAi` → `💬 AIGC`；在 `RULE-SET,OpenAi` 前依次加 `- "RULE-SET,Antigravity,💬 AIGC"`（清单 [`Rules/antigravity.list`](../../Rules/antigravity.list)，由 `rule-providers.Antigravity` 经 **GitHub raw** 拉取）与 `- "RULE-SET,Gemini,💬 AIGC"`（blackmatrix7 `Clash/Gemini/Gemini.yaml`，由 `rule-providers.Gemini` 经 **testingcf CDN** 拉取）。不追加会被后面的 `RULE-SET,Google,国外媒体` 或兜底先命中。
 
 
 ### 落地节点与地区组（反向排除）

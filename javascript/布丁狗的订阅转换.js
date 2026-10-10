@@ -187,6 +187,14 @@ function main(config) {
       format: "yaml",
       type: "http",
     },
+    gemini: {
+      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Gemini/Gemini.yaml",
+      path: "./ruleset/gemini.yaml",
+      behavior: "classical",
+      interval: 86400,
+      format: "yaml",
+      type: "http",
+    },
     steam: {
       url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml",
       path: "./ruleset/steam.yaml",
@@ -204,6 +212,7 @@ function main(config) {
     "RULE-SET,bard,AIGC",
     "RULE-SET,openai,AIGC",
     "RULE-SET,claude,AIGC",
+    "RULE-SET,gemini,AIGC",
     "RULE-SET,steam,PROXY",
     "RULE-SET,telegram_domain,Telegram",
     "RULE-SET,telegram_ip,Telegram",
