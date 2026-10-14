@@ -67,7 +67,7 @@ proxy-groups:
   - name: 落地节点
     include-all: true
     filter: (?i)落地
-    type: url-test
+    type: select
     interval: 300
     tolerance: 50
   - name: 中转节点
