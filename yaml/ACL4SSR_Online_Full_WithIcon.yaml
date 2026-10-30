@@ -154,6 +154,21 @@ proxy-groups:
       - 韩国节点
       - 手动切换
       - DIRECT
+  - name: 📘 Meta
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Facebook.png
+    type: select
+    proxies:
+      - 节点选择
+      - 自动选择
+      - 落地节点
+      - 狮城节点
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 韩国节点
+      - 手动切换
+      - DIRECT
   - name: 油管视频
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
     type: select
@@ -365,6 +380,7 @@ proxy-groups:
       - 落地节点
       - 电报消息
       - 💬 AIGC
+      - 📘 Meta
       - 油管视频
       - 奈飞视频
       - 巴哈姆特
@@ -636,6 +652,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  meta:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/meta.yaml
+    path: ./ruleset/meta.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
 
 rules:
   - "RULE-SET,MyProxyRules,节点选择"
@@ -644,6 +667,8 @@ rules:
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
   - "RULE-SET,BanProgramAD,应用净化"
+  - "DOMAIN-SUFFIX,muse.ai,💬 AIGC"
+  - "RULE-SET,meta,📘 Meta"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,GoogleCN,全球直连"
   - "RULE-SET,SteamCN,全球直连"

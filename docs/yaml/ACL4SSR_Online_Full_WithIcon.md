@@ -26,13 +26,14 @@ ACL4SSR 全量分流 + 策略组图标 + 内置 DNS（fake-ip）。适合 Mihomo
 
 ## 策略组与规则
 
-整体与 `ACL4SSR_Online_Full.yaml` 同系：节点选择、电报、AIGC（OpenAI + Antigravity + Gemini）、流媒体、微软、苹果、游戏、广告、漏网之鱼等。  
+整体与 `ACL4SSR_Online_Full.yaml` 同系：节点选择、电报、📘 Meta、AIGC（OpenAI + Antigravity + Gemini）、流媒体、微软、苹果、游戏、广告、漏网之鱼等。  
 区别主要是：
 
 - 组名更偏简洁（部分无 emoji 前缀，以源文件为准）
 - 每组带 `icon`（Qure / 同类图标集）
 - 文件头部多了完整 `dns:`
 - 本地改动：组名 `OpenAi` → `💬 AIGC`；在 `RULE-SET,OpenAi` 前依次加 `- "RULE-SET,Antigravity,💬 AIGC"`（清单 [`Rules/antigravity.list`](../../Rules/antigravity.list)，由 `rule-providers.Antigravity` 经 **GitHub raw** 拉取）与 `- "RULE-SET,Gemini,💬 AIGC"`（blackmatrix7 `Clash/Gemini/Gemini.yaml`，由 `rule-providers.Gemini` 经 **testingcf CDN** 拉取）。不追加会被后面的 `RULE-SET,Google,国外媒体` 或兜底先命中。
+- 本地改动：新增 `📘 Meta` 组（`icon` 用 Qure `Facebook.png`），规则集 `meta` 指向 MetaCubeX `geosite/meta.yaml`（`behavior: domain` + `format: yaml`，**testingcf CDN**，556 条）；`DOMAIN-SUFFIX,muse.ai,💬 AIGC` 与 `RULE-SET,meta,📘 Meta` 依次插在 `RULE-SET,BanProgramAD` 之后、`RULE-SET,GoogleFCM` 之前——`muse.ai` 在前，用来把上游归入 meta 分类的它抢回 AIGC，`meta` 必须早于尾部 `RULE-SET,ProxyGFWlist`，否则会被抢到 `节点选择`。`GLOBAL` 的 `proxies` 已加入 `📘 Meta`。
 
 
 ### 落地节点与地区组（反向排除）

@@ -17,6 +17,7 @@
 | 🇭🇰🇯🇵🇺🇲🇨🇳🇸🇬🇰🇷 地区节点 | 地区 url-test/select |
 | 📲 电报消息 | Telegram |
 | 💬 AIGC | OpenAI + Google Antigravity + Gemini（Antigravity 走本地 `Rules/antigravity.list`，Gemini 走 blackmatrix7 CDN 规则集） |
+| 📘 Meta | Facebook / Instagram / WhatsApp / Threads / Messenger / Quest（Oculus）/ Meta AI，规则集为 MetaCubeX `geosite/meta` 全量（含 Meta 开发者与开源域名）；`muse.ai` 不在此组，见下 |
 | 📹 油管视频 | YouTube |
 | 🎥 奈飞视频 / 🎥 奈飞节点 | Netflix |
 | 📺 巴哈姆特 / 📺 哔哩哔哩 | 动漫/国内视频相关 |
@@ -36,7 +37,7 @@
 顺序大致为：
 
 1. 局域网 / UnBan → 直连  
-2. 广告 / 应用净化 → 拦截组  
+2. 广告 / 应用净化 → 拦截组；`muse.ai` → 💬 AIGC、`RULE-SET,meta` → 📘 Meta  
 3. FCM、GoogleCN、SteamCN  
 4. Bing / OneDrive / Microsoft / Apple  
 5. Telegram / AIGC（OpenAI + Antigravity + Gemini）/ 网易云 / 游戏平台  
@@ -48,6 +49,10 @@
 11. `MATCH` → 漏网之鱼  
 
 rule-providers 多来自 `ACL4SSR/ACL4SSR` 仓库 list，经 jsDelivr 拉取，`interval: 86400`；其中 `Antigravity` 指向本仓库的 [`Rules/antigravity.list`](../../Rules/antigravity.list)（自建 list，走 **GitHub raw**，不走 CDN），`Gemini` 指向 blackmatrix7 的 `Clash/Gemini/Gemini.yaml`（第三方 list，走 **testingcf CDN**）。
+
+`meta` 是本地新增的 provider：`https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/meta.yaml`（`behavior: domain` + `format: yaml`，**testingcf CDN**，展开后 556 条），覆盖 Facebook / Instagram / WhatsApp / Threads / Messenger / Quest（Oculus）/ Meta AI / Meta 开发者与开源域名，以及大量仿冒域名。**上游已把 `muse.ai` 归入该分类**，所以本地在 `RULE-SET,meta` 之前单独写了 `- "DOMAIN-SUFFIX,muse.ai,💬 AIGC"` 把它抢回 AIGC 组。
+
+> 为什么必须排在 `ProxyGFWlist` 之前：Meta 域名（`meta.com`、`facebook.com`、`instagram.com`、`whatsapp.com`、`threads.com` 等）都在上游 `ProxyGFWlist` 里，该规则在规则表尾部指向 `🚀 节点选择`。`RULE-SET,meta` 若排到它后面会被抢先命中，新组形同虚设。同时它排在 `BanAD` / `BanProgramAD` 之后，`atdmt.com` 这类广告追踪域名仍由广告拦截优先处理。
 
 > 本地追加：`- "RULE-SET,Antigravity,💬 AIGC"` 排在 `RULE-SET,OpenAi` 之前，域名清单在 [`Rules/antigravity.list`](../../Rules/antigravity.list)，由 `rule-providers.Antigravity`（`type: http` + `behavior: classical`）经 **GitHub raw** 拉取，list 内不写出站。同时把出站组 `💬 OpenAi` 改名为 `💬 AIGC`。
 >
